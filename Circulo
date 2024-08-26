@@ -1,0 +1,27 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package objetos;
+
+/**
+ *
+ * @author Departamento
+ */
+public class Circulo {
+    private double radio = 0;
+    private double PI = 3.14d;
+    
+    public Circulo(double radio){
+        this.radio = radio;
+    }
+    
+    public double calcularArea(){
+        return ((radio * radio) * PI);
+    }
+    
+    public double calcularCircunferencia(){
+        return 2*PI * radio;
+    }
+    
+}
