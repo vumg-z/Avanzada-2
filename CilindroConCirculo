@@ -1,0 +1,24 @@
+
+import objetos.Circulo;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author Departamento
+ */
+public class CilindroConCirculo {
+    private Circulo circuloInterno;
+    private float altura;
+    
+    public float calcularArea(){
+        return (circuloInterno.calcularArea() * 2) + (2 * (3.14*circuloInterno.radio * altura));
+    }
+    
+    public flat calcularVolumen(){
+        return circuloInterno.calcularArea() * altura;
+    }
+}
