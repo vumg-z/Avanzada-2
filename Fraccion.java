@@ -13,9 +13,15 @@ public class Fraccion {
     public double denominador;
     public double entero;
     
-    public Fraccion(double numerador, double denominador, double entero){
-        
-        //numerador (numerador = 1) ? this numerador=0 : this.numerador = numerador;
+    // Constructor de la clase Fraccion
+    public Fraccion(double numerador, double denominador, double entero) {
+        if (denominador == 0) {
+            throw new IllegalArgumentException("El denominador no puede ser cero.");
+        }
+
+        this.numerador = numerador;
+        this.denominador = denominador;
+        this.entero = entero;
     }
     
 }
