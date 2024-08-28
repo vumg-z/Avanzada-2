@@ -1,52 +1,40 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Suma;
 
 import fraccion.Fraccion;
 
-/**
- *
- * @author Usuario
- */
 public class Suma {
     
     Fraccion primerElemento;
     Fraccion segundoElemento;
     
-    Fraccion suma(){
-         double enteroFinal;
-         double denomidorFinal;
-         
-        if(primerElemento.denominador == segundoElemento.denominador){
-            enteroFinal =  this.primerElemento.entero + this.segundoElemento.entero;
-            segundoElemento.entero = enteroFinal;
-   
-        }else{
+    public Fraccion suma() {
+        double numeradorFinal;
+        double denominadorFinal;
+        double enteroFinal;
+        
+        if (primerElemento.denominador == segundoElemento.denominador) {
+            numeradorFinal = primerElemento.numerador + segundoElemento.numerador;
+            denominadorFinal = primerElemento.denominador;
+            enteroFinal = primerElemento.entero + segundoElemento.entero;
+        } else {
             
-            // d1 * d2 = d3
-            // n1 * d2 = n3
-            // n2 * d1 = n4
-            
-            // n3 + n4 = n5
-            
-            // n5/d3
-            
-            this..primerElemento.entero + this.segundoElemento.entero;
-            segundoElemento.entero = enteroFinal;
-            return segundoElemento; 
+            denominadorFinal = primerElemento.denominador * segundoElemento.denominador;
+            double numerador1 = primerElemento.numerador * segundoElemento.denominador;
+            double numerador2 = segundoElemento.numerador * primerElemento.denominador;
+            numeradorFinal = numerador1 + numerador2;
+            enteroFinal = primerElemento.entero + segundoElemento.entero;
+        }
+
+        if (numeradorFinal >= denominadorFinal) {
+            enteroFinal += Math.floor(numeradorFinal / denominadorFinal);
+            numeradorFinal = numeradorFinal % denominadorFinal;
         }
         
-        
-        return null;
+        return new Fraccion(numeradorFinal, denominadorFinal, enteroFinal);
     }
     
-    Suma(Fraccion primerElemento, Fraccion segundoElemento){
+    public Suma(Fraccion primerElemento, Fraccion segundoElemento) {
         this.primerElemento = primerElemento;
         this.segundoElemento = segundoElemento;
     }
-    
-    
-    
 }
