@@ -13,7 +13,7 @@ public class Fraccion {
     public double denominador;
     public double entero;
     
-    // Constructor de la clase Fraccion
+   
     public Fraccion(double numerador, double denominador, double entero) {
         if (denominador == 0) {
             throw new IllegalArgumentException("El denominador no puede ser cero.");
